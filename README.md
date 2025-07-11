@@ -23,7 +23,7 @@ The "The Tealogy Cafe Management" project is an open-source web application desi
 - JQuery
 
 ## Authors
-  VED PRAKASH PANDEY
+  VED PRAKASH PANDEY <br>
   vedntv@gmail.com
 - [@vedntv](https://www.github.com/vedntv)
 
