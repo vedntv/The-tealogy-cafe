@@ -1,15 +1,8 @@
 body {
-<<<<<<< HEAD
     background: linear-gradient(rgba(44, 29, 13, 0.7), rgba(44, 29, 13, 0.7)), url(images/coffee-beans-top-view-white-background-space-text_176474-5028.avif) no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-=======
-    /* background-color: rgb(111, 85, 85); */
-    background: url(images/coffee-beans-top-view-white-background-space-text_176474-5028.avif);
-    background-color: rgba(0, 0, 0, 0.587);
-    background-blend-mode: darken;
->>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
 }
 
 .table-responsive {
@@ -21,7 +14,6 @@ body {
 .text-bg-dark {
     text-align: center;
     padding: 20px;
-<<<<<<< HEAD
     font-size: 48px;
     font-family: 'Playfair Display', serif;
     letter-spacing: 3px;
@@ -31,7 +23,6 @@ body {
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(44,29,13,0.18);
 }
-
 
 .btn.cart {
     background: linear-gradient(90deg,#bfa77a,#7c4f1d);
@@ -47,22 +38,6 @@ body {
     background: #7c4f1d;
     color: #fff;
     box-shadow: 0 4px 16px rgba(44,29,13,0.18);
-=======
-    font-size: 60px;
-    font-family: fantasy;
-    letter-spacing: 3px;
-    word-spacing: 10px;
-}
-
-.btn,
-.btn:hover,
-.btn:focus {
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    border-color: rgb(215, 94, 94);
-    color: white;
->>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
 }
 
 .btn:active {
@@ -172,7 +147,6 @@ div.col h3{
     gap: 1px;
 }
 .item-card{
-<<<<<<< HEAD
     padding: 18px;
     border-radius: 16px;
     background: rgba(255,255,255,0.08);
@@ -207,10 +181,6 @@ div.col h3{
     padding: 6px 14px;
     border-radius: 8px;
     font-weight: 600;
-=======
-    padding: 12px;
-    box-shadow: 0 2px 6px rgba(65, 11, 16, .15)
->>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
 }
 
 .fb:hover{
