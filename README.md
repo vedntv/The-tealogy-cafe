@@ -13,6 +13,7 @@ The "The Tealogy Cafe Management" project is an open-source web application desi
 🔥 **Contact Information:** Users can directly contact the shop via the Contact Us form, allowing a seamless connection.
 
 🌠 **FAQs:** There are pre-answered questions mentioned in the FAQ section to provide relevant information to the users. Set of predefined questions have been used.
+<<<<<<< HEAD
 ## Testing Recommendations
 
 1. **Database Setup:**
@@ -39,6 +40,8 @@ The "The Tealogy Cafe Management" project is an open-source web application desi
    - Verify currency symbols (₹) on menu, cart, and order pages
    - Test responsive design on mobile
    - Verify role badges display on homepage
+=======
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
 
 ## Tech Stack
 

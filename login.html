@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="mynav.css">
     <script src="jquery-3.6.4.min.js"></script>
     <script src="mynav.js"></script>
+<<<<<<< HEAD
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     
         <script>
@@ -38,6 +39,8 @@
             }
         })();
         </script>
+=======
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/cafe_fav.png" type="image/x-icon">
@@ -46,6 +49,7 @@
         /* Add your custom styles here */
         body {
             font-family: Arial, sans-serif;
+<<<<<<< HEAD
             background: url('images/coffee-beans-top-view-white-background-space-text_176474-5028.avif') no-repeat center center fixed;
             background-size: cover;
             position: relative;
@@ -139,6 +143,49 @@
         }
         .containerr a:hover {
             color: #7c4f1d;
+=======
+            background-color: rgb(111, 85, 85);
+        }
+        .containerr {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 100px;
+            max-height: 380px;
+        }
+        .sign{
+            text-align: center; /* Center align content */
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
         }
     </style>
 </head>
@@ -149,7 +196,11 @@
                     class="visually-hidden">.</span><span class="navbar-toggler-icon"></span></button>
             <div>
                 <a href="index.html" class="navbar-brand
+<<<<<<< HEAD
                 "><span><strong>The Tealogy Cafe</strong></span></a>
+=======
+                "><span><strong>The Cafe</strong></span></a>
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
             </div>
             <div class="collapse navbar-collapse" id="mynav">
                 <ul class="navbar-nav navbar-right">
@@ -162,9 +213,15 @@
                         <div class="dropdown-menu">
                             <a href="menu.html" class="dropdown-item bg-dark" data-bss-hover-animate="pulse"
                                 style="color:rgba(255, 255, 255);">Menu</a>
+<<<<<<< HEAD
                             <a href="order.html" class="dropdown-item bg-dark d-flex" data-bss-hover-animate="pulse"
                                 style="color:rgba(255, 255, 255);">Your Order</a>
                             <a href="trackorder.html" class="dropdown-item bg-dark d-flex" data-bss-hover-animate="pulse"
+=======
+                            <a href="order.html" class="dropdown-item bg-dark d-fle" data-bss-hover-animate="pulse"
+                                style="color:rgba(255, 255, 255);">Your Order</a>
+                            <a href="trackorder.html" class="dropdown-item bg-dark d-fle" data-bss-hover-animate="pulse"
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
                                 style="color:rgba(255, 255, 255);">Track your order</a>
                         </div>
                     </li>
@@ -178,12 +235,19 @@
                         <a href="faq.html" class="nav-link active" style="color:rgba(255, 255, 255);">FAQ</a>
                     </li>
                     <li class="nav-item">
+<<<<<<< HEAD
+=======
+                        <a href="signup.html" class="nav-link active" style="color:rgba(255, 255, 255);">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
                         <a href="login.html" class="nav-link active" style="color:rgba(255, 255, 255);">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+<<<<<<< HEAD
     <div class="containerr">
         <ul class="nav nav-tabs" id="authTabs" role="tablist">
             <li class="nav-item" role="presentation">
@@ -273,3 +337,27 @@
             </div>
         </div>
     </div>
+=======
+    <!-- Your login form starts here -->
+    <div class="containerr">
+        <h2 class="sign">Login</h2>
+        <form action="login_form.php" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <a href="forgotpassword.html " class="forgotps"   >Forgot Password?</a>
+            </div>
+            <div class="form-group" >
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign Up here</a>.</p>
+    </div>
+    <!-- Your login form ends here -->
+</body>
+</html>
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351

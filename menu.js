@@ -10,16 +10,25 @@ $(document).ready(function () {
     $(".sidebar").hide();
 
     // if add to cart button is clicked, add that item to cart
+<<<<<<< HEAD
     $(document).on("click", ".cart", function () {
+=======
+    $(".add").on("click",".cart",function () {
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
         var ids = $(this).attr("id");
         if (cart[ids] != undefined) {
             cart[ids].quantity += 1;
         } else {
             let itemname = $("#item"+ids).text();
             let itemprice = $("#price"+ids).text();
+<<<<<<< HEAD
             let priceNum = parseInt(itemprice.replace(/[^0-9]/g, ""));
             if (isNaN(priceNum)) priceNum = 0;
             cart[ids] = {name:itemname,price:priceNum,quantity:1};
+=======
+            itemprice = parseInt(itemprice.slice(3,));
+            cart[ids] = {name:itemname,price:itemprice,quantity:1};
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
         }
         updatecart(cart);  
     });
@@ -39,17 +48,30 @@ $(document).ready(function () {
 
 
     // adjust the quantity of an item in the cart
+<<<<<<< HEAD
     $(document).on("click","button.minus",function(){
         let a=this.id.replace('minus','');
+=======
+    $(".add").on("click","button.minus",function(){//*plus
+        let a=this.id.slice(5,8);
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
         cart[a].quantity-=1;
         cart[a].quantity=Math.max(0,cart[a].quantity);
         updatecart(cart);
     });
     
+<<<<<<< HEAD
     $(document).on("click","button.plus",function(){
         let a=this.id.replace('plus','');
         cart[a].quantity+=1;
         updatecart(cart);
+=======
+    $(".add").on("click","button.plus",function(){//*minus
+        let a=this.id.slice(4,8);
+        cart[a].quantity+=1;
+        updatecart(cart);
+        
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
     });
 
     //clear cart
@@ -96,15 +118,22 @@ function addtocart(cart){
     checkcart(cart);
     let str=``
     for(let item in cart){
+<<<<<<< HEAD
         let priceShow = (typeof cart[item].price === 'number' && !isNaN(cart[item].price)) ? cart[item].price : 0;
         let priceFormatted = '₹' + priceShow.toLocaleString('en-IN');
+=======
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
         str+=`
         <div class="row">
             <div class="col-6">
                 <strong>`+cart[item].name+`</strong>
             </div>
             <div class="col-6" style="text-align:end;" >
+<<<<<<< HEAD
                 <strong>`+priceFormatted+`</strong>
+=======
+                <strong>Rs.`+cart[item].price+`</strong>
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
             </div>
         </div>
         <div class="row" style="height:5px"></div>
@@ -129,6 +158,7 @@ function totprice(cart){
     let lblprice = document.getElementById('lbltotal');
     let finalprice = 0;
     for(let item in cart){
+<<<<<<< HEAD
         let price = parseInt(cart[item].price);
         let qty = parseInt(cart[item].quantity);
         if (!isNaN(price) && !isNaN(qty)) {
@@ -140,6 +170,11 @@ function totprice(cart){
     } else {
         lblprice.innerHTML = '₹' + finalprice.toLocaleString('en-IN');
     }
+=======
+        finalprice += (cart[item].price * cart[item].quantity);
+    }
+    lblprice.innerHTML= finalprice;
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
 }
 
 //check the cart if it is empty or not

@@ -35,7 +35,10 @@
     justify-content: flex-start;
   }
   
+<<<<<<< HEAD
 
+=======
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
   .responsive-container-block.bigContainer {
     padding-top: 0px;
     padding-right: 50px;
@@ -45,10 +48,13 @@
     margin-right: 0px;
     margin-bottom: 50px;
     margin-left: 0px;
+<<<<<<< HEAD
     background: linear-gradient(120deg, #fbeee6 0%, #f7d9b9 100%), url('images/coffee-beans-top-view-white-background-space-text_176474-5028.avif') center/cover no-repeat;
     background-blend-mode: lighten;
     border-radius: 32px;
     box-shadow: 0 8px 32px 0 rgba(124, 79, 29, 0.13);
+=======
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
   }
   
   .responsive-container-block.Container {
@@ -68,6 +74,7 @@
     margin-left: auto;
   }
   
+<<<<<<< HEAD
 
   .mainImg {
     width: 100%;
@@ -82,6 +89,12 @@
   .mainImg:hover {
     box-shadow: 0 8px 48px 0 #7c4f1d44;
     border-color: #7c4f1d;
+=======
+  .mainImg {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
   }
   
   .blueDots {
@@ -230,6 +243,11 @@
     background-position-x: initial;
     background-position-y: initial;
     background-size: initial;
+<<<<<<< HEAD
+=======
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+>>>>>>> fc200e02e87d196a317cc5dbbbbd396b84963351
     background-attachment: initial;
     background-origin: initial;
     background-clip: initial;
