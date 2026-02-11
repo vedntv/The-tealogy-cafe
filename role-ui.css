@@ -1,0 +1,31 @@
+/* Role-based UI styles */
+
+/* Root user badge */
+.role-badge-root {
+    background: linear-gradient(90deg, #7c4f1d 0%, #bfa77a 100%);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 8px;
+    box-shadow: 0 2px 8px rgba(124, 79, 29, 0.15);
+}
+
+/* Sales staff badge */
+.role-badge-sales {
+    background: linear-gradient(90deg, #bfa77a 0%, #7c4f1d 100%);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 8px;
+    box-shadow: 0 2px 8px rgba(124, 79, 29, 0.15);
+}
+
+/* Example: Hide root-only or staff-only sections */
+.root-only { display: none; }
+.sales-only { display: none; }
+
+/* Show/hide with JS by toggling display */

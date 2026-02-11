@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Order</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="mynav.css">
+    <script src="jquery-3.6.4.min.js"></script>
+    <script src="mynav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/cafe_fav.png" type="image/x-icon">
+
+    <style>
+        body {
+            background: url('images/coffee-beans-top-view-white-background-space-text_176474-5028.avif') no-repeat center center fixed;
+            background-size: cover;
+            background-color: rgba(0, 0, 0, 0.406);
+            background-blend-mode: darken;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .tracking-container {
+            max-width: 700px;
+            margin: 100px auto 40px;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .tracking-title {
+            text-align: center;
+            color: #7c4f1d;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .search-section {
+            margin-bottom: 30px;
+        }
+
+        .search-section h5 {
+            color: #7c4f1d;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #7c4f1d;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            border: 1.5px solid #bfa77a;
+            border-radius: 8px;
+            padding: 10px 12px;
+            background-color: #fff8f3;
+        }
+
+        .form-control:focus {
+            border-color: #7c4f1d;
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(124, 79, 29, 0.1);
+            outline: none;
+        }
+
+        .search-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-search {
+            flex: 1;
+            background: linear-gradient(90deg, #bfa77a 0%, #7c4f1d 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-search:hover {
+            background: linear-gradient(90deg, #7c4f1d 0%, #bfa77a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(124, 79, 29, 0.2);
+        }
+
+        .btn-reset {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-reset:hover {
+            background-color: #5a6268;
+        }
+
+        .alert {
+            border-radius: 8px;
+            border: none;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border-left: 4px solid #28a745;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #dc3545;
+        }
+
+        .order-details {
+            display: none;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #bfa77a;
+        }
+
+        .order-header {
+            background: linear-gradient(90deg, #bfa77a 0%, #7c4f1d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .order-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .order-status {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .info-section {
+            margin-bottom: 25px;
+        }
+
+        .info-section h6 {
+            color: #7c4f1d;
+            font-weight: bold;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            color: #333;
+        }
+
+        .info-row.total {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #7c4f1d;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        .status-timeline {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f6f2;
+            border-radius: 8px;
+        }
+
+        .status-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .status-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .status-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            width: 2px;
+            height: 30px;
+            background-color: #ddd;
+        }
+
+        .status-dot {
+            min-width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ddd;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .status-dot.active {
+            background: linear-gradient(90deg, #bfa77a 0%, #7c4f1d 100%);
+        }
+
+        .status-dot.completed {
+            background-color: #28a745;
+        }
+
+        .status-label {
+            color: #333;
+        }
+
+        .status-label.active {
+            color: #7c4f1d;
+            font-weight: bold;
+        }
+
+        .order-items {
+            margin-top: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f8f6f2;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .item-qty {
+            color: #666;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #7c4f1d;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #bfa77a;
+            border-top: 3px solid #7c4f1d;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .tracking-container {
+                padding: 20px;
+                margin-top: 80px;
+            }
+
+            .tracking-title {
+                font-size: 1.4rem;
+            }
+
+            .search-buttons {
+                flex-direction: column;
+            }
+
+            .btn-search, .btn-reset {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button">
+        <div class="container">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mynav"><span
+                    class="visually-hidden">.</span><span class="navbar-toggler-icon"></span></button>
+            <div>
+                <a href="index.html" class="navbar-brand"><span><strong>The Tealogy Cafe</strong></span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mynav">
+                <ul class="navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active" style="color:rgba(255, 255, 255);">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#"
+                            style="color:rgba(255, 255, 255);">Services</a>
+                        <div class="dropdown-menu">
+                            <a href="menu.html" class="dropdown-item bg-dark" data-bss-hover-animate="pulse"
+                                style="color:rgba(255, 255, 255);">Menu</a>
+                            <a href="order.html" class="dropdown-item bg-dark d-flex" data-bss-hover-animate="pulse"
+                                style="color:rgba(255, 255, 255);">Your Order</a>
+                            <a href="trackorder.html" class="dropdown-item bg-dark d-flex" data-bss-hover-animate="pulse"
+                                style="color:rgba(255, 255, 255);">Track your order</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link active" style="color:rgba(255, 255, 255);">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active" style="color:rgba(255, 255, 255);">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="faq.html" class="nav-link active" style="color:rgba(255, 255, 255);">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link active" style="color:rgba(255, 255, 255);">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tracking-container">
+        <div class="tracking-title">📦 Track Your Order</div>
+
+        <div class="search-section">
+            <h5>Search Your Order</h5>
+            <p style="color: #666; margin-bottom: 20px;">Use your Order Number or Email Address:</p>
+
+            <div class="form-group">
+                <label for="orderNumber" class="form-label">Order Number</label>
+                <input type="text" class="form-control" id="orderNumber" placeholder="e.g., ORD-20231215-ABC123">
+            </div>
+
+            <div class="form-group">
+                <label for="orderEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="orderEmail" placeholder="Your email address">
+            </div>
+
+            <div class="search-buttons">
+                <button class="btn-search" onclick="trackOrder()">Search Order</button>
+                <button class="btn-reset" onclick="resetSearch()">Clear</button>
+            </div>
+        </div>
+
+        <div id="alertMessage" class="alert"></div>
+        <div id="loadingSpinner" class="loading">
+            <div class="spinner"></div>
+            <p style="color: #7c4f1d; margin-top: 10px;">Searching...</p>
+        </div>
+
+        <div id="orderDetails" class="order-details">
+            <div class="order-header">
+                <div class="order-number">Order #<span id="displayOrderNumber"></span></div>
+                <div style="font-size: 0.95rem;">Placed on <span id="displayOrderDate"></span></div>
+                <div class="order-status" id="displayOrderStatus"></div>
+            </div>
+
+            <div class="status-timeline">
+                <div class="status-step">
+                    <div class="status-dot completed">✓</div>
+                    <div class="status-label completed">Order Placed</div>
+                </div>
+                <div class="status-step" id="confirmStep">
+                    <div class="status-dot" id="confirmDot">2</div>
+                    <div class="status-label" id="confirmLabel">Confirmation Pending</div>
+                </div>
+                <div class="status-step" id="preparingStep">
+                    <div class="status-dot" id="preparingDot">3</div>
+                    <div class="status-label" id="preparingLabel">Preparing</div>
+                </div>
+                <div class="status-step" id="readyStep">
+                    <div class="status-dot" id="readyDot">4</div>
+                    <div class="status-label" id="readyLabel">Ready</div>
+                </div>
+                <div class="status-step" id="deliveredStep">
+                    <div class="status-dot" id="deliveredDot">5</div>
+                    <div class="status-label" id="deliveredLabel">Delivered</div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h6>📍 Delivery Information</h6>
+                <div class="info-row">
+                    <span>Name:</span>
+                    <span id="displayName"></span>
+                </div>
+                <div class="info-row">
+                    <span>Email:</span>
+                    <span id="displayEmail"></span>
+                </div>
+                <div class="info-row">
+                    <span>Phone:</span>
+                    <span id="displayPhone"></span>
+                </div>
+                <div class="info-row">
+                    <span>Address:</span>
+                    <span id="displayAddress"></span>
+                </div>
+                <div class="info-row">
+                    <span>City, State:</span>
+                    <span><span id="displayCity"></span>, <span id="displayState"></span></span>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h6>🛒 Order Summary</h6>
+                <div id="orderItemsList" class="order-items"></div>
+                <div class="info-row total">
+                    <span>Total Amount:</span>
+                    <span id="displayTotal"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function trackOrder() {
+            const orderNumber = document.getElementById('orderNumber').value.trim();
+            const email = document.getElementById('orderEmail').value.trim();
+
+            if (!orderNumber && !email) {
+                showAlert('danger', 'Please enter an Order Number or Email Address');
+                return;
+            }
+
+            showLoadingSpinner(true);
+            hideAlert();
+
+            const data = {};
+            if (orderNumber) data.order_number = orderNumber;
+            if (email) data.email = email;
+
+            fetch('track_order.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                showLoadingSpinner(false);
+                
+                if (data.success) {
+                    displayOrderInfo(data.order);
+                    showAlert('success', 'Order found!');
+                } else {
+                    showAlert('danger', data.message || 'Order not found');
+                    document.getElementById('orderDetails').style.display = 'none';
+                }
+            })
+            .catch(error => {
+                showLoadingSpinner(false);
+                showAlert('danger', 'Error searching order: ' + error.message);
+                document.getElementById('orderDetails').style.display = 'none';
+            });
+        }
+
+        function displayOrderInfo(order) {
+            const date = new Date(order.created_at);
+            const formattedDate = date.toLocaleDateString('en-IN') + ' at ' + date.toLocaleTimeString();
+
+            document.getElementById('displayOrderNumber').textContent = order.order_number;
+            document.getElementById('displayOrderDate').textContent = formattedDate;
+            document.getElementById('displayOrderStatus').textContent = order.status_badge.label;
+            document.getElementById('displayOrderStatus').style.background = order.status_badge.color;
+
+            document.getElementById('displayName').textContent = order.guest_name;
+            document.getElementById('displayEmail').textContent = order.guest_email;
+            document.getElementById('displayPhone').textContent = order.guest_phone;
+            document.getElementById('displayAddress').textContent = order.guest_address;
+            document.getElementById('displayCity').textContent = order.guest_city;
+            document.getElementById('displayState').textContent = order.guest_state;
+            document.getElementById('displayTotal').textContent = '₹' + order.total_amount.toLocaleString('en-IN');
+
+            const statuses = ['pending', 'confirmed', 'preparing', 'ready', 'delivered'];
+            const statusSteps = {
+                'confirmed': 'confirmStep',
+                'preparing': 'preparingStep',
+                'ready': 'readyStep',
+                'delivered': 'deliveredStep'
+            };
+
+            statuses.forEach(status => {
+                const step = statusSteps[status];
+                if (step) {
+                    const stepEl = document.getElementById(step);
+                    const dotEl = document.getElementById(status + 'Dot');
+                    const labelEl = document.getElementById(status + 'Label');
+                    
+                    if (statuses.indexOf(order.order_status) >= statuses.indexOf(status)) {
+                        dotEl.classList.add('completed');
+                        dotEl.textContent = '✓';
+                        labelEl.classList.add('completed');
+                    }
+                    if (order.order_status === status) {
+                        dotEl.classList.add('active');
+                        labelEl.classList.add('active');
+                    }
+                }
+            });
+
+            let itemsHtml = '';
+            if (order.order_items && Object.keys(order.order_items).length > 0) {
+                for (let itemId in order.order_items) {
+                    const item = order.order_items[itemId];
+                    const itemTotal = (item.price * item.quantity).toLocaleString('en-IN');
+                    itemsHtml += `
+                        <div class="order-item">
+                            <div>
+                                <div class="item-name">${item.name}</div>
+                                <div class="item-qty">Qty: ${item.quantity}</div>
+                            </div>
+                            <div class="item-price">₹${itemTotal}</div>
+                        </div>
+                    `;
+                }
+            }
+            document.getElementById('orderItemsList').innerHTML = itemsHtml;
+
+            document.getElementById('orderDetails').style.display = 'block';
+            document.getElementById('orderDetails').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetSearch() {
+            document.getElementById('orderNumber').value = '';
+            document.getElementById('orderEmail').value = '';
+            document.getElementById('orderDetails').style.display = 'none';
+            hideAlert();
+        }
+
+        function showAlert(type, message) {
+            const alertEl = document.getElementById('alertMessage');
+            alertEl.className = 'alert alert-' + type;
+            alertEl.textContent = message;
+            alertEl.style.display = 'block';
+        }
+
+        function hideAlert() {
+            const alertEl = document.getElementById('alertMessage');
+            alertEl.style.display = 'none';
+        }
+
+        function showLoadingSpinner(show) {
+            document.getElementById('loadingSpinner').classList.toggle('show', show);
+        }
+
+        document.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && (document.activeElement.id === 'orderNumber' || document.activeElement.id === 'orderEmail')) {
+                trackOrder();
+            }
+        });
+    </script>
+</body>
+
+</html>
