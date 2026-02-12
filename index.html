@@ -4,36 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
 
-    
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="mynav.css">
+<<<<<<< HEAD
     <script src="jquery-3.6.4.min.js"></script>
     <script src="index.js"></script>
     <script src="mynav.js"></script>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/cafe_fav.png" type="image/x-icon">
+=======
+    <link rel="stylesheet" href="role-ui.css">
 
+    <title>The Tealogy Cafe</title>
+>>>>>>> cef978224206ce94f9bb9bab1c3709e1f26d3de7
+    <link rel="shortcut icon" href="images/cafe_fav.png" type="image/x-icon">
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md fixed-top navigation-clean-button">
         <div class="container">
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mynav"><span
+<<<<<<< HEAD
                     class="visually-hidden">.</span><span class="navbar-toggler-icon"></span></button>
                 <!-- Role badge example, to be set by JS after login -->
                 <div id="role-badge-container" style="position:absolute;top:10px;right:20px;z-index:1000;"></div>
+=======
+                    class="visually-hidden">Toggle</span><span class="navbar-toggler-icon"></span></button>
+            <!-- Role badge (set by JS after login) -->
+            <div id="role-badge-container" style="position:absolute;top:10px;right:20px;z-index:1000;"></div>
+>>>>>>> cef978224206ce94f9bb9bab1c3709e1f26d3de7
             <div>
-                <a href="index.html" class="navbar-brand
-                "><span><strong>The Tealogy Cafe</strong></span></a>
+                <a href="index.html" class="navbar-brand"><strong>The Tealogy Cafe</strong></a>
             </div>
             <div class="collapse navbar-collapse" id="mynav">
+<<<<<<< HEAD
                 <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
                         <a href="index.html" class="nav-link active">Home</a>
@@ -58,11 +65,30 @@
                     <li class="nav-item">
                         <a href="login.html" class="nav-link">Login</a>
                     </li>
+=======
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link active" style="color:#fff;">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#" style="color:#fff;">Services</a>
+                        <div class="dropdown-menu">
+                            <a href="menu.html" class="dropdown-item bg-dark" data-bss-hover-animate="pulse" style="color:#fff;">Menu</a>
+                            <a href="order.html" class="dropdown-item bg-dark d-flex" data-bss-hover-animate="pulse" style="color:#fff;">Your Order</a>
+                            <a href="trackorder.html" class="dropdown-item bg-dark d-flex" data-bss-hover-animate="pulse" style="color:#fff;">Track your order</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="about.html" class="nav-link" style="color:#fff;">About Us</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link" style="color:#fff;">Contact Us</a></li>
+                    <li class="nav-item"><a href="faq.html" class="nav-link" style="color:#fff;">FAQ</a></li>
+                    <li class="nav-item"><a href="signup.html" class="nav-link" style="color:#fff;">Sign Up</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link" style="color:#fff;">Login</a></li>
+>>>>>>> cef978224206ce94f9bb9bab1c3709e1f26d3de7
                 </ul>
             </div>
         </div>
     </nav>
+
     <section>
+<<<<<<< HEAD
         <div class="imdiv" data-bss-parallax-bg="true" style="background-image: url('images/cafe.webp'), url('images/coffee-beans-top-view-white-background-space-text_176474-5028.avif'); background-position: center; background-size: cover; background-repeat: no-repeat; background-blend-mode: overlay; min-height: 60vh; padding:60px 0;">
             <div class="container h-100">
                 <div class="row h-100">
@@ -76,9 +102,68 @@
                 </div>
             </div>
 
+=======
+        <div class="imdiv" data-bss-parallax-bg="true" style="background: url('images/cafe.webp') center/cover; background-blend-mode: darken; padding:80px 0;">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-md-7 text-center text-md-start d-flex justify-content-center align-items-center justify-content-md-start">
+                        <div class="written">
+                            <h1 class="text-uppercase fw-bold" style="color:#ded83b;">WELCOME TO THE TEALOGY CAFE</h1>
+                            <p class="my-3" style="color:white; font-size:1.1rem;">Tealogy Cafe – Where Tea & Coffee Meet Soul.<br>
+                            Step into a world of warmth, aroma, and community. At Tealogy Cafe, we blend tradition and innovation to serve you the finest teas, specialty coffees, and handcrafted treats.</p>
+                            <a href="menu.html" class="btn btn-primary btn-large me-2">Go To Menu</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 d-none d-md-flex align-items-center justify-content-center">
+                        <div style="background:rgba(255,255,255,0.92);border-radius:18px;padding:18px;box-shadow:0 2px 8px rgba(124,79,29,0.08);max-width:320px;">
+                            <h4 style="color:#7c4f1d;font-weight:bold;">Featured This Month</h4>
+                            <img src="images/coffee-beans-top-view-white-background-space-text_176474-5028.avif" alt="Featured Drink" style="width:100%;border-radius:12px;margin-bottom:10px;">
+                            <ul style="color:#7c4f1d;font-size:1rem;list-style:square inside;margin-left:0;padding-left:0;">
+                                <li>Rose Cardamom Chai</li>
+                                <li>Cold Brew Lemonade</li>
+                                <li>Vegan Banana Bread</li>
+                            </ul>
+                            <p style="font-size:0.95rem;color:#4d2e0a;">Try our seasonal specials and let us know your favorite!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role-based sections (hidden by default) -->
+    <div class="root-only" style="display:none; margin: 20px 0;">
+        <span class="role-badge-root">Root User</span> | <b>Root-only controls here</b>
+        &nbsp; <a href="admin_users.php" class="btn btn-sm btn-outline-dark">Admin Panel</a>
+>>>>>>> cef978224206ce94f9bb9bab1c3709e1f26d3de7
     </div>
     <div class="sales-only" style="display:none; margin: 20px 0;">
         <span class="role-badge-sales">Sales Staff</span> | <b>Sales staff controls here</b>
     </div>
+<<<<<<< HEAD
 </body>
 </html>
+=======
+
+    <!-- Scripts -->
+    <script src="jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="mynav.js"></script>
+    <script src="index.js"></script>
+
+    <script>
+    // Show/hide sections based on user role (replace with real session logic)
+    function setRoleUI(role) {
+        document.querySelectorAll('.root-only').forEach(e => e.style.display = (role === 'root') ? 'block' : 'none');
+        document.querySelectorAll('.sales-only').forEach(e => e.style.display = (role === 'sales_staff') ? 'block' : 'none');
+        let badge = '';
+        if(role === 'root') badge = '<span class="role-badge-root">Root User</span>';
+        if(role === 'sales_staff') badge = '<span class="role-badge-sales">Sales Staff</span>';
+        const container = document.getElementById('role-badge-container');
+        if(container) container.innerHTML = badge;
+    }
+    </script>
+
+</body>
+</html>
+>>>>>>> cef978224206ce94f9bb9bab1c3709e1f26d3de7
