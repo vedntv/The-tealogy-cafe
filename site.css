@@ -1,0 +1,91 @@
+/* Global site theme */
+:root{
+  --bg-1: #f6f4ef;
+  --bg-2: #f1efe9;
+  --accent-1: #bfa77a; /* warm gold */
+  --accent-2: #7c4f1d; /* deep brown */
+  --muted: #6b5a4a;
+  --card-bg: #ffffff;
+}
+
+/* Base */
+html,body{height:100%;margin:0;font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%); color:#333}
+
+.container{max-width:1100px;margin-left:auto;margin-right:auto;padding-left:18px;padding-right:18px}
+
+/* Buttons */
+.btn-theme{background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:#fff; border:none; border-radius:10px; padding:10px 14px}
+.btn-theme-outline{background:transparent;color:var(--accent-2);border:2px solid var(--accent-1);border-radius:10px;padding:8px 12px}
+
+/* Cards and sections */
+.card-like{background:var(--card-bg);border-radius:12px;padding:18px;box-shadow:0 8px 24px rgba(16,12,8,0.06)}
+.h2-theme{color:var(--accent-2);font-weight:700}
+
+/* Forms */
+.form-control, .form-select, textarea{border-radius:8px;border:1px solid #e6e0d6;padding:10px 12px}
+.form-label{color:var(--muted);font-weight:600}
+.form-group{margin-bottom:14px}
+
+/* Inputs focus */
+.form-control:focus, .form-select:focus, textarea:focus{outline:none;border-color:var(--accent-1);box-shadow:0 0 0 6px rgba(191,167,122,0.08)}
+
+/* Navbar adjustments - keeps using mynav.css, just small helpers */
+.main-content{margin-top:78px}
+
+/* Utility */
+.text-accent{color:var(--accent-2)}
+.small-muted{color:#7a6b5b;font-size:0.95rem}
+
+@media (max-width:767px){
+  .container{padding-left:12px;padding-right:12px}
+}
+
+/* Merged contact.css styles */
+/* Contact page specific adjustments (merged from contact.css) */
+/* Clean, modern styles for Contact page */
+body.contact-merged {
+    /* reserved if a page wants separate body styles */
+}
+
+.bg-light { background: #fff !important; }
+
+.text-primary { color: #7c4f1d !important; }
+
+/* Form styles */
+form .form-control { border-radius: 8px; border: 1px solid #e6e0d6; padding: 10px 12px; }
+form .btn-primary { background: linear-gradient(90deg,#bfa77a,#7c4f1d); border: none; }
+
+/* Map ratio handled by Bootstrap .ratio */
+.ratio iframe { border-radius: 8px; }
+
+/* Small helpers */
+.shadow-sm { box-shadow: 0 6px 18px rgba(22,17,12,0.06) !important; }
+
+@media (max-width: 767px) {
+    main.container { padding-left: 16px; padding-right: 16px; }
+}
+
+/* Add top margin so main content sits comfortably below fixed navbar */
+main.container { margin-top: 16px; }
+
+/* Make form fonts medium-weight and ensure labels/inputs use medium weight */
+form, form .form-control, form .form-label, form label, form .form-select, form textarea, form input, form button { font-weight: 500; }
+
+/* Force single-column stacked layout for the contact page sections */
+/* Targets the common Bootstrap column classes used in contact.html */
+main.container .row > .col-lg-6 { flex: 0 0 100% !important; max-width: 100% !important; }
+
+/* Reduce some vertical spacing to keep the stacked content compact */
+.bg-light .row.gy-4 { gap: 1.25rem !important; }
+.bg-light .p-4 { padding: 1rem !important; }
+
+/* Highlighted containers for name and email fields */
+form .mb-3.highlight { background: linear-gradient(90deg,#fff9f0,#fff4e6); border-radius: 10px; padding: 0.55rem 0.75rem; margin-bottom: 0.75rem; }
+
+form .mb-3.highlight .form-label { display: block; margin-bottom: 0.25rem; color: #5a3a1a; font-weight: 600; }
+
+/* Make the inputs appear clean inside the colored container */
+form .mb-3.highlight .form-control { background: transparent; border: none; padding-left: 0; padding-right: 0; box-shadow: none; }
+
+/* Focus state for inputs across the form */
+form .form-control:focus { border-color: #bfa77a; box-shadow: 0 0 0 4px rgba(191,167,122,0.12); }

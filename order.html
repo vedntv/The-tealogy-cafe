@@ -19,9 +19,62 @@
 
     <link rel="stylesheet" href="mynav.css" />
     <link rel="stylesheet" href="order.css" />
+    <link rel="stylesheet" href="site.css" />
     <script src="jquery-3.6.4.min.js"></script>
     <script src="mynav.js"></script>
     <script src="order.js"></script>
+
+    <style>
+      /* Page background and overlay */
+      body {
+        background-image: url('images/coffee-beans-top-view-white-background-space-text_176474-5028.avif');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+      body::before{
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(20,20,20,0.55);
+        z-index: 0;
+      }
+
+      /* Main containers should sit above overlay */
+      .container, .checkout-container, .step1 { position: relative; z-index: 1; }
+
+      /* Single column layout: stack cart and form, narrow max width */
+      .step1, .checkout-container {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgba(255,255,255,0.95);
+        border-radius: 12px;
+        padding: 18px;
+      }
+
+      /* Force form rows into single column */
+      .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .form-group { width: 100%; }
+
+      /* Make action buttons full width and stacked */
+      .form-actions .btn { width: 100%; margin-bottom: 10px; }
+
+      /* Cart items styling for stacked list */
+      #items { display: block; }
+      .cart-items .item { display: flex; justify-content: space-between; align-items:center; padding: 10px 8px; border-bottom: 1px solid #eee; }
+      .cart-summary { margin-top: 12px; font-weight:600; }
+
+      @media (min-width: 992px) {
+        /* Slightly larger padding on wide screens */
+        .step1, .checkout-container { padding: 28px; }
+      }
+    </style>
 
     <title>Order</title>
 
@@ -41,31 +94,28 @@
           <div class="collapse navbar-collapse" id="mynav">
               <ul class="navbar-nav navbar-right">
                   <li class="nav-item">
-                      <a href="index.html" class="nav-link active" style="color:rgba(255, 255, 255);">Home</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                      <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#"
-                          style="color:rgba(255, 255, 255);">Services</a>
-                      <div class="dropdown-menu">
-                          <a href="menu.html" class="dropdown-item bg-dark" data-bss-hover-animate="pulse"
-                              style="color:rgba(255, 255, 255);">Menu</a>
-                          <a href="order.html" class="dropdown-item bg-dark d-flex" data-bss-hover-animate="pulse"
-                              style="color:rgba(255, 255, 255);">Your Order</a>
-                          <a href="trackorder.html" class="dropdown-item bg-dark d-flex" data-bss-hover-animate="pulse"
-                            style="color:rgba(255, 255, 255);">Track your order</a>
-                      </div>
+                      <a href="index.html" class="nav-link active">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a href="about.html" class="nav-link active" style="color:rgba(255, 255, 255);">About Us</a>
+                    <a href="menu.html" class="nav-link">Menu</a>
                   </li>
                   <li class="nav-item">
-                      <a href="contact.html" class="nav-link active" style="color:rgba(255, 255, 255);">Contact Us</a>
+                    <a href="order.html" class="nav-link">Your Order</a>
                   </li>
                   <li class="nav-item">
-                      <a href="faq.html" class="nav-link active" style="color:rgba(255, 255, 255);">FAQ</a>
+                    <a href="trackorder.html" class="nav-link">Track Order</a>
                   </li>
                   <li class="nav-item">
-                    <a href="login.html" class="nav-link active" style="color:rgba(255, 255, 255);">Login</a>
+                      <a href="about.html" class="nav-link">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="about.html#contact" class="nav-link">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="faq.html" class="nav-link">FAQ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
                 </li>
               </ul>
           </div>

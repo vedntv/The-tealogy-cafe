@@ -191,7 +191,7 @@ function validateOrderData(data) {
  */
 function submitOrder(orderData, callback) {
     $.ajax({
-        url: 'checkout.php',
+        url: 'index.html',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(orderData),

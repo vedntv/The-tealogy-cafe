@@ -23,16 +23,16 @@ The "The Tealogy Cafe Management" project is an open-source web application desi
    ```
 
 2. **Admin Setup:**
-   - Open `create_root.php` in browser to create root user
-   - Default: email=root@tealogy.local, password=admin123
-   - Delete create_root.php after use
+   - Automatic server-side scripts were removed for security. See `create_root.html` for guidance on how to recreate an admin safely.
+   - Default admin credentials (when recreated via SQL): email=root@tealogy.local, password=admin123
+   - After creating an admin account, remove any temporary creation scripts and secure your database
 
 3. **Functional Tests:**
    - Add items to cart, verify localStorage persistence
-   - Sign up with extended profile, verify email/username uniqueness
-   - Login with different roles, verify access control
-   - Access admin_users.php as root, change user roles
-   - Place order, verify cart and confirmation
+   - Sign up via the UI (note: server-side account creation is disabled in this copy)
+   - Login via the UI (note: server-side authentication is disabled in this copy)
+   - Admin features are placeholders; restore server-side components to test role management
+   - Place order via the UI (note: checkout processing is disabled in this copy)
 
 4. **Visual Verification:**
    - Check navbar consistency across all pages
